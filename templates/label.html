@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block title %}{{ label }}{% endblock title %}
+
+{% block content_writing %}
+{% if postlength == 0 %}
+<div class="content-writing">
+    <div class="content">
+    <p class="breadcumbs">
+    {{labex | safe}}
+    </p></div>
+<div class="short">
+                    <p style="font: size 20px;">There is No Posts for <b>{{label}}</b></p><br>
+                        <ul style="padding-left:20px ;"><b>Suggestions:</b>
+                        <li>Make sure that all words are spelled correctly.</li>
+                        <li>Try different keywords.</li>
+                        <li>Try more general keywords.</li>
+                        <li>Try fewer keywords</li>
+                        </ul>
+                </div>
+
+</div>
+
+{% else %}
+<div class="content-writing">
+            <div class="content">
+                <p class="breadcumbs">
+                    {{labex | safe}}
+                </p>
+{% comment %} 
+                <div class="short">
+                    <p></p>
+                </div> {% endcomment %}
+
+
+
+            </div>
+            <div class="cards">
+            {{post}}
+
+                <!-- <p>Latest Songs</p> -->
+                
+                <div class="cards-attach">
+                {% for post in posts %}
+                    <!-- cards start -->
+                    <a href="/song/{{post.Slug}}">
+                        <!-- Enter your posts link -->
+                        <div class="card">
+
+                            <!-- image must be in 320 X 180 -->
+                            <img src="https://img.youtube.com/vi/{{post.YoutubeId}}/mqdefault.jpg" alt="{{post.Slug}}-{{post.SongWriter}}">
+                            <!--post image-->
+                            <ul class="card-list">
+                            
+                                <li class="card-list-items">{{post.SongName}}</li> <!-- song name-->
+
+                                <li class="card-list-items">{{post.SongWriter}}</li> <!-- singer name -->
+                            </ul>
+                        </div>
+                    </a>
+                    <!-- card end -->
+                {% endfor %}
+                    
+                </div>
+                <div class="next">
+                    <a href="/all/{{label}}"> << Prev</a><a href="/all/{{label}}"> >> Next</a>
+                </div>
+    
+            </div>
+{% endif %}
+{% endblock content_writing %}
+{% block latestpost %}
+
+{% endblock latestpost %}
+{% block popular_songs %}
+
+{% endblock popular_songs %}
+{% block labels %}
+
+{% endblock labels %}
+{% block hindi_songs %}
+
+{% endblock hindi_songs %}
+{% block english_songs %}
+
+{% endblock english_songs %}

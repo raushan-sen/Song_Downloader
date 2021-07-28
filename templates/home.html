@@ -1,0 +1,189 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% csrf_token %}
+{% block join %}
+<div class="follow_telegram">
+            <p>Please Follow My Telegram For Latest Updates</p>
+            <a href="{{setup.Telegram_url}}">Follow Now</a>
+        </div>
+        <div class="category">
+            <p>Songs By Genere</p>
+            <div class="category-i">
+                <a href="/">Home</a>
+                {% for geners in genere %}
+                <a href="/tag/{{geners.Slug}}">{{geners.CategeryName}}</a>
+                {% endfor %}
+                
+            </div>
+        </div>
+{% endblock join %}
+
+
+{% block content_writing %}
+<div class="content-writing">
+<center><p>{{setup.Short_story}}</p><center>
+</div>
+{% endblock content_writing %}
+{% block latestpost %}
+<div class="latest-songs">
+            <div class="cards">
+
+                <p>Latest Songs</p>
+                <div class="cards-attach">
+                {% for latest in latest_posts %}
+                    <!-- cards start -->
+                    <a href="/song/{{latest.Slug}}">
+                        <!-- Enter your posts link -->
+                        <div class="card">
+
+                            <!-- image must be in 320 X 180 -->
+                            <img src="https://img.youtube.com/vi/{{latest.YoutubeId}}/mqdefault.jpg" alt="{{latest.Slug}}-{{latest.SongWriter}}">
+                            <!--post image-->
+                            <ul class="card-list">
+                                <li class="card-list-items">{{latest.SongName}}</li> <!-- song name-->
+
+                                <li class="card-list-items">{{latest.SongWriter}}</li> <!-- singer name -->
+                            </ul>
+                        </div>
+                    </a>
+                    <!-- card end -->
+                {% endfor %}
+                </div>
+                {% comment %} {% if postlength ==  %}{% endif %} {% endcomment %}
+                <div class="view">
+                    <a href="/all/latest-posts"> >> View More</a>
+                </div>
+    
+            </div>
+
+        </div>
+{% endblock latestpost %}
+{% block popular_songs %}
+<div class="popular-songs">
+
+            <div class="cards">
+                <p>Popular Songs</p>
+                <div class="cards-attach">
+            {% for popular in popular_posts %}
+            <!-- cards start -->
+            <a href="/song/{{popular.slug}}">
+                <!-- Enter your posts link -->
+                <div class="card">
+
+                    <!-- image must be in 320 X 180 -->
+                    <img src="https://img.youtube.com/vi/{{popular.YoutubeId}}/mqdefault.jpg"
+                        alt="{{popular.Slug}}-{{popular.SongWriter}}">
+                    <!--post image-->
+                    <ul class="card-list">
+                        <li class="card-list-items">{{popular.SongName}}</li> <!-- song name-->
+
+                        <li class="card-list-items">{{popular.SongWriter}}</li> <!-- singer name -->
+                    </ul>
+                </div>
+            </a>
+            <!-- card end -->
+            {% endfor %}
+    
+            </div>
+
+        </div>
+
+{% endblock popular_songs %}
+{% block labels %}
+{% load static %}
+        <div class="labels">
+            <div class="label-card">
+                <p class="card-title-main">Song Labels</p>
+                <div class="label-cards">
+                    {% for label in gener %}
+                    <!-- label items start -->
+
+                    <a href="/tag/{{label.Slug}}">
+                        <div class="label-item">
+                            <img src="{% static 'images/d780998902c6e43eee27b1cfc1469384.jpg' %}" alt="{{label.Slug}}" width="100px" height="
+                        100px">
+                            <p>{{label.CategeryName}}</p>
+                            <p>{{total_posts}} Songs</p>
+                        </div>
+                    </a>
+                    <!-- label items end -->
+                    {% endfor %}
+                </div>
+
+            </div>
+            <div class="view">
+                <a href="/all/genere"> >> View More</a>
+            </div>
+
+
+        </div>
+
+{% endblock labels %}
+{% block hindi_songs %}
+        <div class="hindi-songs">
+            <div class="cards">
+                <p>Hindi Songs</p>
+                <div class="cards-attach">
+                {% for hindi_post in hindi_posts %}
+                    <!-- cards start -->
+                    <a href="/song/{{hindi_post.Slug}}">
+                        <!-- Enter your posts link -->
+                        <div class="card">
+
+                            <!-- image must be in 320 X 180 -->
+                            <img src="https://img.youtube.com/vi/{{hindi_post.YoutubeId}}/mqdefault.jpg" alt="{{hindi_post.Slug}}">
+                            <!--post image-->
+                            <ul class="card-list">
+                                <li class="card-list-items">{{hindi_post.SongName}}</li> <!-- song name-->
+                                <li class="card-list-items">{{hindi_post.SongWriter}}</li> <!-- singer name -->
+                            </ul>
+                        </div>
+                    </a>
+                    <!-- card end -->
+                {% endfor %}
+                </div>
+                <div class="view">
+                    <a href="/all/hindi-songs"> >> View More</a>
+                </div>
+    
+            </div>
+
+        </div>
+{% endblock hindi_songs %}
+{% block english_songs %}
+        <div class="english-songs">
+            <div class="cards">
+                <p>English Songs</p>
+                <div class="cards-attach">
+                {% for English_post in English_posts %}
+                    <!-- cards start -->
+                    <a href="/song/{{English_post.Slug}}">
+                        <!-- Enter your posts link -->
+                        <div class="card">
+
+                            <!-- image must be in 320 X 180 -->
+                            <img src="https://img.youtube.com/vi/{{English_post.YoutubeId}}/mqdefault.jpg" alt="{{English_post.Slug}}">
+                            <!--post image-->
+                            <ul class="card-list">
+                                <li class="card-list-items">{{English_post.SongName}}</li> <!-- song name-->
+
+                                <li class="card-list-items">{{English_post.SongWriter}}</li> <!-- singer name -->
+                            </ul>
+                        </div>
+                    </a>
+                    <!-- card end -->
+
+                {% endfor %}
+                </div>
+            </div>
+            <div class="view">
+                <a href="/all/english-song"> >> View More</a>
+            </div>
+
+
+        </div>
+{% endblock english_songs %}
+
+{% block short_text %}{% endblock short_text %}

@@ -1,0 +1,384 @@
+*{
+    padding:0;
+    margin: 0;
+}
+
+:root{
+    --skin-color:rgb(32, 30, 30);
+    --join-color:rgb(255, 0, 0);
+    --text-color:#ffffff;
+    --main-text-padding:10px;
+    --menu-color:red;
+    --header-font-size:20px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@500&display=swap');
+
+
+body{
+    background: #ffffff;
+    font-family: 'Baloo Bhai 2', cursive;
+    
+}
+
+.container{
+    margin:0 90px;
+    /* border: solid 5px black; */
+    /* padding: 10px; */
+    /* box-shadow: 3px 10px 5px #aaaaaa; */
+}
+.content-writing{
+    padding: 10px;
+}
+
+.logo{
+    background:var(--skin-color);
+}
+.follow_telegram{
+    padding: 10px;
+    text-align: center;
+    margin:10px 0;
+    background-color:var(--join-color);
+}
+.follow_telegram p{
+    color: var(--text-color);
+    font-size: 25px;
+}
+.logo{
+    padding: var(--main-text-padding);
+
+}
+.logo a{
+    text-decoration: none;
+    color: var(--text-color);
+    padding: 3px;
+    font-size: 40px;
+}
+.logo b{
+    color: var(--text-color);
+    padding: 3px;
+    font-size: 40px;
+    border: solid 3px var(--text-color);
+}
+.follow_telegram a{
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.follow_telegram a:hover{
+    color: black;
+}
+
+.category{
+    color:var(--text-color);
+}
+.category p{
+    font-size: var(--header-font-size);
+    background-color: var(--skin-color);
+    padding: 10px;
+}
+.category-i{
+    margin: 10px;
+}
+.category-i a{
+    text-decoration: none;
+    color: var(--menu-color);
+    padding: 10px;
+    margin: 10px;
+    padding-left: 5px;
+    /* display: flex; */
+    justify-content: space-between;
+    
+}
+
+.category-i a:hover{
+    color: black;
+    font-size:16px;
+}
+.search-content{
+    background-color: violet;
+}
+.search-content p{
+    font-size: var(--header-font-size);
+    color: var(--text-color);
+    padding: var(--main-text-padding);
+    background-color: var(--skin-color);
+}
+
+.search-content form{
+    padding: var(--main-text-padding);
+}
+.search-content form input{
+    padding:var(--main-text-padding);
+    width: 50%;
+}
+    
+.breadcumbs a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.next {
+    display: flex;
+    justify-content: space-between;
+    padding-left:30px;
+    padding-right:30px;
+}
+
+.next a{
+    color:black;
+}
+
+.content{
+    margin: 10PX;
+}
+
+.search-content button{
+    cursor: pointer;
+    padding: var(--main-text-padding);
+}
+
+
+.cards p img{
+    -webkit-filter: grayscale(1) invert(1);
+    filter: grayscale(1) invert(1);
+}
+
+.cards p{
+    font-size: var(--header-font-size);
+    padding: var(--main-text-padding);
+    background-color: var(--skin-color);
+    color: var(--text-color);
+}
+.card{
+    max-width: 100%;
+    max-height: 100%;    
+    padding: 11px;
+    margin: 1.5px;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.card:hover{
+    border: black solid 3px;
+}
+
+.cards a{
+    text-decoration: none;
+}
+
+.card img{
+    border-radius: 10px;
+    width: 150px;
+    height: 80px;
+}
+
+.card-list{
+    margin-top: 10px;
+    
+}
+
+.card-list-items{
+    
+    list-style: none;
+    color: black;
+    text-align: center;
+
+}
+
+.cards-attach{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.cards-attach a{
+    padding: 10px;
+}
+
+.card-title-main{
+    font-size: var(--header-font-size);
+    background-color:var(--skin-color);
+    color: var(--text-color);
+    padding: 5px;
+}
+
+.label-cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    cursor: pointer;
+    
+}
+
+.label-item{
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+
+.label-item:hover{
+    border:var(--skin-color) 2px solid;
+}
+
+.label-cards a{
+    text-decoration: none;
+    color: black;
+}
+.footer{
+    background-attachment: fixed;
+    background-color: var(--skin-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    color: var(--text-color);
+}
+
+.footer a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.singers{
+    width: 100%;
+}
+.singers-list{
+    display: grid;
+    /* grid-row: 1fr 1fr 1fr 1fr 1fr 1fr; */
+}
+.singers ul li{
+    list-style: none;
+    padding: 4px;
+    border-bottom:2px solid var(--skin-color);
+}
+.singers ul img{
+    width: 20px;
+    height: 20px;
+    /* -webkit-filter: grayscale(1) invert(1);
+    filter: grayscale(1) invert(1); */
+}
+.singers ul li a{
+    
+    text-decoration: none;
+    color: black;
+    padding-bottom:4px;
+    
+}
+
+.singers p{
+    color: var(--text-color);
+    background-color: var(--skin-color);
+    padding: var(--main-text-padding);
+    margin: 3px 0;
+}
+
+.short-text{
+    margin: 10px;
+}
+.view{
+    text-align: center;
+    padding: 10px;
+}
+.view a{
+    text-decoration: none;
+    color: black;
+    
+
+}
+.post-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.post-content ul{
+    list-style: none;
+}
+.breadcumbs{
+    background-color: rgb(65, 60, 60);
+    padding: 10px;
+    margin: 3px;
+    color: white;
+}
+.details{
+    padding: 10px;
+}
+.details li{
+    padding: 2px;
+}
+
+.download-song{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+}
+.download-song a{
+    background-color: var(--join-color);
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+.download p{
+    color: var(
+        --text-color
+    );
+    padding: var(--main-text-padding);
+    text-align: center;
+    background-color: var(--skin-color);
+}
+.video p{
+    color: var(
+        --text-color
+    );
+    padding: var(--main-text-padding);
+    text-align: center;
+    background-color: var(--skin-color);
+}
+.short{
+    padding: 10px;
+}
+.post-content img{
+    padding: 3px;
+}
+
+.lyrics{
+    padding: 10px;
+}
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    .container{
+      margin: 0 0;
+    }
+    .cards-attach{
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4,1fr);
+    }
+    .label-cards{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2,1fr);
+    }
+  }
+
+@media only screen and (max-width: 768px){
+    .post-content{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .post-content img{
+        width: 99%;
+    }
+}
+
+@media only screen and (max-width:300px) {
+    .download-song {
+        display:grid;
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+}

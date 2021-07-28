@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% block title %}Tere Naal Song by Arijit{% endblock title %}
+{% load static %}
+
+{% block content_writing %}
+<div class="content-writing">
+    <div class="content">
+        <p class="breadcumbs">
+            <a href="/">Home</a> > <a href="/">{{post.Genere}}</a> > <a href="">{{post.SongName}}</a> >
+            {{post.SongName}}
+        </p>
+        <div class="post-content">
+            <img src="https://img.youtube.com/vi/{{post.YoutubeId}}/mqdefault.jpg" alt="">
+            <ul class="details">
+                <li>{{post.SongName}}</li>
+                <li>Genere: {{post.Genere}}</li>
+                <li>🎤 Singer(s): {{singers}}</li>
+                <li>🖊 Lyric Writter(s): {{post.SongWriter}}</li>
+                <li>Album: {{post.Album}}</li>
+            </ul>
+        </div>
+        <div class="short">
+            <p>{{post.Short | safe }}</p>
+        </div>
+        <div class="lyrics">
+            <b>{{post.SongName}} Lyrics</b>
+            <p>{{post.Lyrics | safe}}</p>
+        </div>
+        <div class="download">
+            <p>Listen Song</p>
+            <div style="margin: 10px;text-align: center;">
+                <audio controls>
+                    <source src="{{audio_url}}">
+                </audio>
+            </div>
+        </div>
+        <div class="download">
+            <p>Download Song</p>
+            <div class="download-song">
+
+                <a href="{{audio_url}}" download>Download</a>
+                <a href="{{audio_url}}" download>Download</a>
+                <a href="{{audio_url}}" download>Download</a>
+            </div>
+        </div>
+        <div class="video">
+            <p>Tere Naal Video Song</p>
+            <center style="margin:10px;">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{post.YoutubeId}}"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </center>
+            <p>Download Video</p>
+            <div class="download-song">
+                <a href="/">Download</a>
+                <a href="/">Download</a>
+                <a href="/">Download</a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock content_writing %}
+{% block latestpost %}
+<div class="latest-songs">
+    <div class="cards">
+
+        <p>Latest Songs</p>
+        <div class="cards-attach">
+            {% for latest in latests %}
+            <!-- cards start -->
+            <a href="/song/{{latest.Slug}}">
+                <!-- Enter your posts link -->
+                <div class="card">
+
+                    <!-- image must be in 320 X 180 -->
+                    <img src="https://img.youtube.com/vi/{{latest.YoutubeId}}/mqdefault.jpg"
+                        alt="{{latest.Slug}}-{{latest.SongWriter}}">
+                    <!--post image-->
+                    <ul class="card-list">
+                        <li class="card-list-items">{{latest.SongName}}</li> <!-- song name-->
+
+                        <li class="card-list-items">{{latest.SongWriter}}</li> <!-- singer name -->
+                    </ul>
+                </div>
+            </a>
+            <!-- card end -->
+            {% endfor %}
+        </div>
+        <div class="view">
+            <a href="/"> >> View More</a>
+        </div>
+
+    </div>
+
+</div>
+{% endblock latestpost %}
+{% block popular_songs %}
+
+{% endblock popular_songs %}
+{% block labels %}
+{% load static %}
+<div class="labels">
+    <div class="label-card">
+        <p class="card-title-main">Song Labels</p>
+        <div class="label-cards">
+            {% for label in gener %}
+            <!-- label items start -->
+
+            <a href="/tag/{{label.Slug}}">
+                <div class="label-item">
+                    <img src="{% static 'images/d780998902c6e43eee27b1cfc1469384.jpg' %}" alt="{{label.Slug}}"
+                        width="100px" height="
+                        100px">
+                    <p>{{label.CategeryName}}</p>
+                    <p>{{total_posts}} Songs</p>
+                </div>
+            </a>
+            <!-- label items end -->
+            {% endfor %}
+        </div>
+
+    </div>
+    <div class="view">
+        <a href="/"> >> View More</a>
+    </div>
+
+
+</div>
+
+{% endblock labels %}
+{% block hindi_songs %}
+<div class="popular-songs">
+    <div class="cards">
+        <p>Popular Songs</p>
+        <div class="cards-attach">
+            {% for popular in popular_posts %}
+            <!-- cards start -->
+            <a href="/song/{{popular.slug}}">
+                <!-- Enter your posts link -->
+                <div class="card">
+
+                    <!-- image must be in 320 X 180 -->
+                    <img src="https://img.youtube.com/vi/{{popular.YoutubeId}}/mqdefault.jpg"
+                        alt="{{popular.Slug}}-{{popular.SongWriter}}">
+                    <!--post image-->
+                    <ul class="card-list">
+                        <li class="card-list-items">{{popular.SongName}}</li> <!-- song name-->
+
+                        <li class="card-list-items">{{popular.SongWriter}}</li> <!-- singer name -->
+                    </ul>
+                </div>
+            </a>
+            <!-- card end -->
+            {% endfor %}
+        </div>
+    </div>
+    
+</div>
+{% endblock hindi_songs %}
+{% block english_songs %}
+
+{% endblock english_songs %}

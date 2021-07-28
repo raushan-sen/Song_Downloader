@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}404 ERROR PAGE NOT FOUND{% endblock title %}
+{% block content_writing %}
+<div class="content-writing">
+            <div class="content">
+                <p class="breadcumbs">
+                    404 ERROR PAGE NOT FOUND !
+                    
+                </p>
+                
+                <div class="short">
+                    <p style='font: size 20px;'>Your {{type}} - <b>{{url}}</b>- did not match.</p>
+                        <ul style="padding-left:20px ;"><b>Suggestions:</b>
+                        <li>Make sure that all words are spelled correctly.</li>
+                        <li>Try different keywords.</li>
+                        <li>Try more general keywords.</li>
+                        <li>Try fewer keywords</li>
+                        </ul>
+                </div>
+                
+                
+            </div>
+    
+        </div>
+{% endblock content_writing %}

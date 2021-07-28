@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/fs.js' %}"></script>
+</head>
+<body>
+    <!-- <form action="/ss" method="POST">
+    
+    <input type="hidden" name="dd" value="7">
+    <p>{{s}}</p>
+    <button>Submit</button>
+    </form> -->
+    {% csrf_token %}
+    <button class="1" id="btn">HGoooo</button>
+    <button class="2" id="btn">HGoooo</button>
+    <button class="4" id="btn">HGoooo</button>
+</body>
+</html>

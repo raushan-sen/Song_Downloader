@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'Favicon/favicon.ico' %}" type="image/x-icon">
+    <title>{% block title %}{% endblock title %} | {{setup.Site_Name}}</title>
+    <!-- seo -->
+    <meta name="title" content="{% block seo_title %}{% endblock seo_title %}">
+    <meta name="description" content="{% block description %}{% endblock description %}">
+    <meta name="keywords" content="{% block keywords %}{% endblock keywords %}">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/"><b>D</b>{{setup.Site_Name}}</a>
+
+        </div>
+
+        {% block join %}
+        {% endblock join %}
+        <div class="search-content">
+            <p>Search</p>
+            <form action="/search" method="get">
+                <input type="text" placeholder="Type song,singer,writer name......." name="q"
+                    required><button>Search</button>
+            </form>
+        </div>
+        {% block content_writing %}
+        {% endblock content_writing %}
+        {% block latestpost %}{% endblock latestpost %}
+        {% block popular_songs %}{% endblock popular_songs %}
+        {% block labels %}{% endblock labels %}
+
+        {% block hindi_songs %}{% endblock hindi_songs %}
+        {% block english_songs %}{% endblock english_songs %}
+        <div class="singers">
+            
+                <p>Top Singers</p>
+            
+            <ul class="singers-list">
+            {% for singers in sing %}
+                <li><a href="/singer/{{singers.Name}}"><img src="{% static 'images/outline_headset_mic_black_24dp.png' %}" alt="{{singers.Name}}">{{singers.Name}}</a> (105 songs)
+                </li>
+            {% endfor %}
+                
+            </ul>
+            <div class="view">
+                <a href="/all/singers"> >> View More</a>
+            </div>
+        </div>
+        {% block short_text %}{% endblock short_text %}
+        <div class="footer">
+            <div class="left">
+                <p class="web-cradit">
+                    &copy;Copyright by @Dlr
+                </p>
+            </div>
+            <div class="center">
+                <p><b>DMCA</b> Protected</p>
+            </div>
+            <div class="right">
+                <a href="/contact">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
